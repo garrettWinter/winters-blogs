@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winters Blogs</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="navlist">Home</li>
+                <li class="navlist">Dashboard</li>
+                <li class="navlist"> {{#if loggedIn}}
+                    <button id="logout" class="btn-no-style">Logout</button>
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{/if}}
+                </li>
+            </ul>
+        </nav>
+        <div id="titleText">
+            Welcome to the Winters Blogs!
+        </div>
+    </header>
+
+    <div id="blogPostSection">
+      {{{body}}}
+    </div>
+
+    <footer>
+        Garrett Winter © Copyright 2023, with no rights reserved
+    </footer>
+
+    
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
