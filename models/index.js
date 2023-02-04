@@ -5,18 +5,13 @@ const Posts = require('./Posts');
 
 
 // Posts to Users table assosications to connent a User to a Post
-Posts.belongsTo(Users, {
-    foreignKey: 'user_id',
-});
+
 Users.hasMany(Posts, {
     foreignKey: "post_user_id",
 });
 
 
 // Comments to Users table assosications to connent a User to a Comment
-Comments.belongsTo(Users, {
-    foreignKey: 'user_id',
-});
 Users.hasMany(Comments, {
     foreignKey: "comment_user_id",
 });

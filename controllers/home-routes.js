@@ -5,20 +5,20 @@ const { Comments, Posts, Users } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        const dbblogPosts = await Posts.findAll({
-            include: [
-                {
-                    model: Comments, Users,
-                    attributes: ['post_title', 'post_body', 'user_name'],
-                },
-            ],
-        });
+    //     const dbblogPosts = await Posts.findAll({
+    //         include: [
+    //             {
+    //                 model: Users,
+    //                 attributes: ['post_title', 'post_body', 'user_name'],
+    //             },
+    //         ],
+    //     });
 
-        const blogPosts = dbblogPosts.map((Posts) =>
-            Posts.get({ plain: true })
-        );
+    //     const blogPosts = dbblogPosts.map((Posts) =>
+    //         Posts.get({ plain: true })
+    //     );
         res.render('homepage', {
-            blogPosts,
+            // blogPosts,
             // loggedIn: req.session.loggedIn,
         });
     } catch (err) {

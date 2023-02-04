@@ -17,6 +17,16 @@ header{
     font-weight: bold;
 }
 
+a:link {
+    color: lightgray;
+    font-weight: bold;
+}
+
+a:visited {
+    color: lightgray;
+    font-weight: bold;
+}
+
 #titleText {
     display: inline-flex;
     margin-left: 20px;
