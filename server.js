@@ -33,12 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-
-// These are running just to trigger create the DBs
-// const { Users, Comments, Posts  } = require('./models');
-
 app.use(routes);
 
 sequelize.sync({force: false}).then(()=> {
-    app.listen(PORT,() => console.log (`Application listening on port ${PORT}.`))
+    app.listen(PORT,() => console.log (`Application listening on port ${PORT}. Check out out at http://localhost:3001`))
 });

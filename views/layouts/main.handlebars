@@ -13,8 +13,8 @@
     <header>
         <nav>
             <ul>
-                <li class="navlist">Home</li>
-                <li class="navlist">Dashboard</li>
+                <li class="navlist"><a href="/">Home</a></li>
+                <li class="navlist"><a href="/dashboard">Dashboard</a></li>
                 <li class="navlist"> {{#if loggedIn}}
                     <button id="logout" class="btn-no-style">Logout</button>
                     {{else}}
@@ -27,16 +27,13 @@
             Welcome to the Winters Blogs!
         </div>
     </header>
-
-    <div id="blogPostSection">
-      {{{body}}}
-    </div>
-
+    <main>
+        {{{body}}}
+    </main>
     <footer>
         Garrett Winter © Copyright 2023, with no rights reserved
     </footer>
 
-    
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}

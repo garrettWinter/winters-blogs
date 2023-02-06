@@ -9,7 +9,9 @@ const Posts = require('./Posts');
 Users.hasMany(Posts, {
     foreignKey: "post_user_id",
 });
-
+Posts.hasOne(Users, {
+    foreignKey: "user_id",
+});
 
 // Comments to Users table assosications to connent a User to a Comment
 Users.hasMany(Comments, {
