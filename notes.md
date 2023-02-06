@@ -43,12 +43,10 @@ Pie in Sky:
 Upcomign Items:
 
 Draft HTML
-    Login/Signup Page
     Dashboard
 	Viewing a specific Post
-Implement User Authentication
-    ????
-Hooks:
-    Need one on create and on delete for password for hashing
 Routes
     Setup a General 404 error 
+
+README
+	Call out and screenshot that it will log out users after 15min of in-activity

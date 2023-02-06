@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         // console.log(blogPosts[0].User.user_name);
         res.render('homepage', {
             blogPosts,
-            // loggedIn: req.session.loggedIn, /////// What would this do if I enable?
+            loggedIn: req.session.loggedIn, /////// What would this do if I enable?
         });
     } catch (err) {
         console.log(err);
@@ -29,7 +29,8 @@ router.get('/', async (req, res) => {
 //GET Dashboard Route
 
 router.get('/dashboard', async (req, res) => {
-    if (req.session.loggedIn) { ///////////////////// took off the ! to make this not trigger
+    console.log(req.session.loggedIn);
+    if (!req.session.loggedIn) { ///////////////////// took off the ! to make this not trigger
         res.redirect('/login');
     } else {
         try {
@@ -47,11 +48,9 @@ router.get('/dashboard', async (req, res) => {
             const dashBoard = dbdDashBoard.map((Posts) =>
                 Posts.get({ plain: true })
             );
-            console.log(dashBoard)
-            // console.log(blogPosts[0].User.user_name);
             res.render('dashboard', {
                 dashBoard,
-                // loggedIn: req.session.loggedIn,
+                loggedIn: req.session.loggedIn,
             });
         } catch (err) {
             console.log(err);

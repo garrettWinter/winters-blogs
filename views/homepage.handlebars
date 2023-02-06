@@ -1,10 +1,10 @@
 <div id="blogPostSection">
     {{!-- THIS UNLESS SHOULD BE SWITCHED TO A IF ONCE SESSIONS WORK --}}
-    {{#unless loggedIn}}
+    {{#if loggedIn}}
     <div id="newPostBox">
         <button id="newPostBtn">+ New Post</button>
     </div>
-    {{/unless}}
+    {{/if}}
     {{#each blogPosts as |posts|}}
     <article class="blogPostCard">
         <div class="postHeader">
