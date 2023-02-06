@@ -38,6 +38,7 @@ Pie in Sky:
 	Add 404 Redirect
 		Timeout on 404 page before redirect to index page.
 	If user logged in while on login or signup page, will notify the user of this at the top of the page.
+	Add drop shadows to all boxes and buttons
 
 
 Upcomign Items:

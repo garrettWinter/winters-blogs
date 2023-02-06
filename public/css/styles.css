@@ -164,6 +164,38 @@ main{
 
 /* End of Login/Signup Section */
 
+/* Start of Posts Page Section*/
+
+#newCommentBox{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#addCommentTextBox{
+    width: 50%;
+    height: 200px;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#newCommentBtn{
+    display: flexbox;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 9px;
+    width: 20%;
+}
+
+/* End of Posts Page Section*/
 
 footer{
     position: fixed;

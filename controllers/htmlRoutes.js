@@ -15,10 +15,9 @@ router.get('/', async (req, res) => {
         const blogPosts = dbblogPosts.map((Posts) =>
             Posts.get({ plain: true })
         );
-        // console.log(blogPosts[0].User.user_name);
         res.render('homepage', {
             blogPosts,
-            loggedIn: req.session.loggedIn, /////// What would this do if I enable?
+            loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         console.log(err);
@@ -30,7 +29,7 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard', async (req, res) => {
     console.log(req.session.loggedIn);
-    if (!req.session.loggedIn) { ///////////////////// took off the ! to make this not trigger
+    if (!req.session.loggedIn) { 
         res.redirect('/login');
     } else {
         try {
@@ -43,7 +42,6 @@ router.get('/dashboard', async (req, res) => {
                         model: Comments,
                     },
                 ],
-                // where: {user_id: req.sess.user_id} ////////// DONT THINK THIS IS RIGHT
             });
             const dashBoard = dbdDashBoard.map((Posts) =>
                 Posts.get({ plain: true })
@@ -58,6 +56,53 @@ router.get('/dashboard', async (req, res) => {
         }
     }
 });
+
+//GET Posts by ID Route
+
+router.get('/posts/:id', async (req, res) => {
+        try {
+            const postsData = await Posts.findAll({
+                include: [
+                    {
+                        model: Users, ////// Need to add a exclude on password
+                    },
+                    {
+                        model: Comments,
+                    },
+                ],
+                where: {post_id: req.params.id}
+            });
+            const commentsData = await Comments.findAll({
+                include: [
+                    {
+                        model: Users, ////// Need to add a exclude on password
+                    },
+                    {
+                        model: Posts,
+                    },
+                ],
+                where: {post_id: req.params.id}
+            });
+            const postDetails = postsData.map((posts) =>
+                posts.get({ plain: true })
+            );
+            const commentDetails = commentsData.map((comments) =>
+            comments.get({ plain: true })
+        );
+            console.log(postDetails);
+            console.log(commentDetails);
+            
+            res.render('posts', {
+                postDetails,
+                commentDetails,
+                loggedIn: req.session.loggedIn,
+            });
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    }
+);
 
 //GET Route for the Login in HTML page
 router.get('/login', async (req, res) => {
