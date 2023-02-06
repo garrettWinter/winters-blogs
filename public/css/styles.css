@@ -1,0 +1,168 @@
+*{
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Start of Header Section */
+
+header{
+    background-color: black;
+    color: lightgray;
+    padding: 10px
+}
+
+.navlist{
+    display: inline-flex;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+a:link {
+    color: lightgray;
+    font-weight: bold;
+}
+
+a:visited {
+    color: lightgray;
+    font-weight: bold;
+}
+
+#titleText {
+    display: inline-flex;
+    margin-left: 20px;
+    padding: 10px;
+    margin: 20px 20px;
+    background-color: lightgray;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 6px 4px 16px grey;
+}
+
+/* End of Header Section */
+
+body{
+    background-color: lightgray;
+}
+
+main{
+    margin: 10px 20px;
+
+}
+
+/* Start of Home Page Section */
+#newPostBox{
+    display: flex;
+    justify-content: space-around;
+}
+
+#newPostBtn{
+    display: flexbox;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 9px;
+    width: 20%;
+}
+
+.blogPostCard{
+    border: 3px solid black;
+    margin: 20px 20px;
+
+}
+
+.postHeader{
+    background-color: black;
+    color: lightgray;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.postTitle{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.postMeta{
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.postBody{
+    padding: 10px 20px;
+}
+/* End of Home Page Section */
+
+
+/* Start of Login/Signup Section */
+
+.authOuterBox{
+    border: 3px solid black;
+}
+
+.authHeader{
+    background-color: black;
+    color: lightgray;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 8px 10px
+}
+
+.authInnerBox{
+    padding: 8px 10px
+}
+
+.authLables{
+    color: black;
+    font-weight: bolder;
+    padding: 3px 0px;
+}
+
+.AuthUserInput{
+    background-color: white;
+    width: 100%;}
+
+.authBtn{
+    width: 100%;
+    background-color: rgb(102 102 102);
+    color: lightgray;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 3px 0px;
+    margin: 3px 0px;
+}
+
+.authLink:link {
+    color: blue;
+    font-size: 20px;
+}
+
+.authLink:visited {
+    color: purple;
+    font-weight: bold;
+}
+
+/* End of Login/Signup Section */
+
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+    color: lightgray;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
+}

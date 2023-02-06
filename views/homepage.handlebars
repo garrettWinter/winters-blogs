@@ -1,0 +1,17 @@
+<div id="blogPostSection">
+    {{!-- THIS UNLESS SHOULD BE SWITCHED TO A IF ONCE SESSIONS WORK --}}
+    {{#unless loggedIn}}
+    <div id="newPostBox">
+        <button id="newPostBtn">+ New Post</button>
+    </div>
+    {{/unless}}
+    {{#each blogPosts as |posts|}}
+    <article class="blogPostCard">
+        <div class="postHeader">
+            <div class="postTitle">{{posts.post_title}}</div>
+            <div class="postMeta">Posted by {{posts.User.user_name}} on {{posts.updatedAt}}</div>
+        </div>
+        <div class="postBody"> {{posts.post_body}}</div>
+    </article>
+    {{/each}}
+</div>
