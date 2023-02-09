@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
     secret: 'Super secret secret',
-    cookie: {},
+    cookie: {
+      maxAge: 15 * 60 * 1000, //Will time user out after 15 minutes of inactivity
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({

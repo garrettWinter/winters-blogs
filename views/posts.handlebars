@@ -1,0 +1,34 @@
+<div id="blogPostSection">
+    {{!-- Pulls in header details about the post --}}
+    {{#each postDetails as |post|}}
+    <article class="blogPostCard">
+        <div class="postHeader" data-postid="{{post.post_id}}">
+            <div class="postTitle">{{post.post_title}}</a></div>
+            <div class="postMeta">Posted by {{post.User.user_name}} on {{post.updatedAt}}</div>
+        </div>
+        <div class="postBody"> {{post.post_body}}</div>
+    </article>
+    {{/each}}
+    {{!-- Populates the comments that are assoicated to this post --}}
+    {{#each commentDetails as |posts|}}
+    <article class="blogPostCard">
+        <div class="commentHeader">
+            <div class="postTitle">{{posts.User.user_name}} commented on "{{posts.Post.post_title}}" on
+                {{posts.updatedAt}}</div>
+        </div>
+        <div class="postBody"> {{posts.comment}}</div>
+    </article>
+    {{/each}}
+</div>
+{{#if loggedIn }}
+<div id="newCommentBox">
+    <textarea id="addCommentTextBox"></textarea>
+    <button id="newCommentBtn" data="{{commentDetails.Post.post_id}}">Add a Comment!</button>
+</div>
+{{/if}}
+{{#unless loggedIn}}
+<div id="newPostBox">
+    <button id="loginBtn"><a href="/login">Login to add a comment</a></button>
+</div>
+{{/unless}}
+<script src="/js/posts.js"></script>

@@ -27,4 +27,13 @@ Posts.hasMany(Comments, {
     foreignKey: "post_id",
 });
 
+// Comments to User table assosications to connect a post to a comment
+Comments.belongsTo(Users, {
+    foreignKey: 'comment_user_id',
+});
+Users.hasMany(Comments, {
+    foreignKey: "comment_user_id",
+});
+
+
 module.exports = {Users, Comments, Posts};
