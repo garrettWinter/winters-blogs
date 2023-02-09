@@ -166,6 +166,14 @@ main{
 
 /* Start of Posts Page Section*/
 
+.commentHeader{
+    background-color: black;
+    color: lightgray;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 #newCommentBox{
     display: flex;
     justify-content: space-around;
@@ -180,6 +188,7 @@ main{
     background-color: white;
     margin: 5px;
     padding: 5px;
+    margin-bottom: 20px;
     font-size: 18px;
     font-weight: bolder;
 }
@@ -195,7 +204,113 @@ main{
     width: 20%;
 }
 
+#loginBtn{
+    display: flexbox;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 9px;
+    width: 20%;
+}
+
 /* End of Posts Page Section*/
+
+/* Start of Dashboard*/
+
+#dashboardOuterBox{
+    margin: 20px;
+    border: 2px solid black;
+}
+
+#newPostBtn{
+    display: flexbox;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 9px;
+    width: 20%;
+}
+
+.updatePostHeader{
+    background-color: black;
+    color: lightgray;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+#updateTitleBox{
+    width: 100%;
+    margin: 0px;
+    line-height: 100%;
+    background-color: lightgray;
+    border-color: transparent;
+    resize: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-right: 2px solid black;
+}
+
+#updateBodyBox{
+    width: 100%;
+    height: 100px;
+    margin: 0px;
+    line-height: 100%;
+    background-color: lightgray;
+    border-color: transparent;
+    resize: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-right: 2px solid black;
+}
+
+#updatePostButtonsBox{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+#updatePostBtn{
+    display: flexbox;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 9px;
+    width: 20%;
+}
+
+#deletePostBtn{
+    display: flexbox;
+    align-items: center;
+    background-color: red;
+    color: black;
+    border-color: transparent;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 5px 10px;
+    border-radius: 9px;
+    width: 20%;
+}
+
+/* End of Dashboard*/
+
+.pageHeader{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+    font-weight: bolder;
+}
 
 footer{
     position: fixed;

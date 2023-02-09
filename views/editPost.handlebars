@@ -1,0 +1,22 @@
+<div class="pageHeader">You are editing one of your posts!</div>
+
+<div id="blogPostSection">
+    {{!-- Pulls in header details about the post --}}
+    {{#each postDetails as |post|}}
+    <article class="blogPostCard">
+        <div class="updatePostHeader">
+            <div class="postTitle">Post Title</div>
+            <textarea id="updateTitleBox">{{post.post_title}}</textarea>
+        </div>
+
+
+        <div class="updatePostHeader">
+            <div class="postTitle">Post Body</div>
+                    <textarea id="updateBodyBox">{{post.post_body}}</textarea>
+        </div>
+    </article>
+    <div id="updatePostButtonsBox">
+        <button id="updatePostBtn" data="{{commentDetails.Post.post_id}}">Save Changes</button>
+        <button id="deletePostBtn" data="{{commentDetails.Post.post_id}}">Delete Post</button>
+        {{/each}}
+    </div>
