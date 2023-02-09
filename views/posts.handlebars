@@ -2,7 +2,7 @@
     {{!-- Pulls in header details about the post --}}
     {{#each postDetails as |post|}}
     <article class="blogPostCard">
-        <div class="postHeader" data-postid="{{post.post_id}}">
+        <div class="postHeader" data-postID="{{post.post_id}}">
             <div class="postTitle">{{post.post_title}}</a></div>
             <div class="postMeta">Posted by {{post.User.user_name}} on {{post.updatedAt}}</div>
         </div>
@@ -31,4 +31,4 @@
     <button id="loginBtn"><a href="/login">Login to add a comment</a></button>
 </div>
 {{/unless}}
-<script src="/js/posts.js"></script>
+<script src="/js/comment.js"></script>

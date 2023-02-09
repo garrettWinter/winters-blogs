@@ -86,7 +86,7 @@ router.get('/dashboard/post/:id', async (req, res) => {
 //GET Posts by ID Route
 
 router.get('/posts/:id', async (req, res) => {
-    console.log(req);
+    // console.log(req);
     try {
         const postsData = await Posts.findAll({
             include: [
@@ -116,8 +116,8 @@ router.get('/posts/:id', async (req, res) => {
         const commentDetails = commentsData.map((comments) =>
             comments.get({ plain: true })
         );
-        console.log(postDetails);
-        console.log(commentDetails[0].Post.post_id);
+        // console.log(postDetails);
+        // console.log(commentDetails[0].Post.post_id);
 
         res.render('posts', {
             postDetails,

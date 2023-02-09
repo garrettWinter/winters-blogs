@@ -292,8 +292,8 @@ main{
 #deletePostBtn{
     display: flexbox;
     align-items: center;
-    background-color: red;
-    color: black;
+    background-color: rgb(179, 25, 25);
+    color: lightgray;
     border-color: transparent;
     font-size: 20px;
     font-weight: bolder;
