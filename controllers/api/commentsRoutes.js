@@ -13,12 +13,7 @@ router.post('/new', (req, res) => {
   };
   console.log(parsedComment);
 
-  console.log("about to parse the req from comments post");
-  console.log(req.body.comment); // This is the comment
-  console.log(req.session.user_id); // This get the user ID
-  console.log(req.headers.referer);
-
-  // Creating a new comment a book
+  // Creating a new comment
   Comments.create(parsedComment)
     .then((newComment) => {
       res.status(200).json(newComment);

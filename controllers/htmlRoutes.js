@@ -131,10 +131,12 @@ router.get('/posts/:id', async (req, res) => {
 }
 );
 
+
+
 //GET Route for the Login in HTML page
-router.get('/posts', async (req, res) => {
+router.get('/dashboard/posts/new', async (req, res) => {
     try {
-        res.render('login', {
+        res.render('newPost', {
         });
     } catch (err) {
         console.log(err);
