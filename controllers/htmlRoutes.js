@@ -9,12 +9,17 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: Users,
+                    attributes: {
+                        // Making it so the passoword field is not included in the results
+                        exclude: ['password']
+                    }
                 },
             ],
         });
         const blogPosts = dbblogPosts.map((Posts) =>
             Posts.get({ plain: true })
         );
+        console.log(blogPosts);
         res.render('homepage', {
             blogPosts,
             loggedIn: req.session.loggedIn,
@@ -37,15 +42,20 @@ router.get('/dashboard', async (req, res) => {
                 include: [
                     {
                         model: Users,
+                        attributes: {
+                            // Making it so the passoword field is not included in the results
+                            exclude: ['password']
+                        }
                     },
                 ],
                 where: {
                     post_user_id: req.session.user_id,
-                  },
+                },
             });
             const blogPosts = dbblogPosts.map((Posts) =>
                 Posts.get({ plain: true })
             );
+            console.log(blogPosts);
             res.render('dashboard', {
                 blogPosts,
                 loggedIn: req.session.loggedIn,
@@ -63,7 +73,11 @@ router.get('/dashboard/post/:id', async (req, res) => {
         const postsData = await Posts.findAll({
             include: [
                 {
-                    model: Users, ////// Need to add a exclude on password
+                    model: Users,
+                    attributes: {
+                        // Making it so the passoword field is not included in the results
+                        exclude: ['password']
+                    }
                 },
             ],
             where: { post_id: req.params.id }
@@ -91,7 +105,11 @@ router.get('/posts/:id', async (req, res) => {
         const postsData = await Posts.findAll({
             include: [
                 {
-                    model: Users, ////// Need to add a exclude on password
+                    model: Users,
+                    attributes: {
+                        // Making it so the passoword field is not included in the results
+                        exclude: ['password']
+                    }
                 },
                 {
                     model: Comments,
@@ -116,8 +134,6 @@ router.get('/posts/:id', async (req, res) => {
         const commentDetails = commentsData.map((comments) =>
             comments.get({ plain: true })
         );
-        // console.log(postDetails);
-        // console.log(commentDetails[0].Post.post_id);
 
         res.render('posts', {
             postDetails,

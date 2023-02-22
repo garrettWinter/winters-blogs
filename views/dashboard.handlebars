@@ -1,15 +1,14 @@
-    
-    <div class="pageHeader">You are viewing your dashboard</div>
-    {{#each blogPosts as |posts|}}
-    <article class="blogPostCard">
-        <div class="postHeader">
-            <div class="postTitle"><a href="/dashboard/post/{{posts.post_id}}">{{posts.post_title}}</a></div>
-            <div class="postMeta">Posted by {{posts.User.user_name}} on {{posts.updatedAt}}</div>
-        </div>
-        <div class="postBody"> {{posts.post_body}}</div>
-    </article>
-    {{/each}}
+<div class="pageHeader">You are viewing your dashboard</div>
+{{#each blogPosts as |posts|}}
+<article class="blogPostCard">
+    <div class="postHeader">
+        <div class="postTitle"><a href="/dashboard/post/{{posts.post_id}}">{{posts.post_title}}</a></div>
+        <div class="postMeta">Posted by {{posts.User.user_name}} on {{posts.updatedAt}}</div>
+    </div>
+    <div class="postBody"> {{posts.post_body}}</div>
+</article>
+{{/each}}
 
-    <div id="newCommentBox">
-    <button id="newPostBtn">Add a Post!</button>
+<div id="newCommentBox">
+    <button id="newPostBtn"><a href="/dashboard/posts/new">Add a Post!</a></button>
 </div>

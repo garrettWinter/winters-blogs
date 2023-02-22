@@ -5,8 +5,8 @@ USE winters_blogs_db;
 -- CREATE DATABASE winters_blogs_db;
 
 INSERT INTO USERS (user_name, password, created_at, updated_at)
-VALUES ("Vassago", "abc123", NOW(), NOW()),
-("Ambrotias", "bcd234", NOW(), NOW()),
+VALUES ("Vassago", "$2b$10$LnYM8dId8CbXBSP.VXyNDOv7ndyFoUoYlbYDyevgLetioQB3hIBcS", NOW(), NOW()),
+("Ambrotias", "$2b$10$g4ieOs63QiLNaKsN/0G.B.tUY9EBdasR2JpCvzPtgL42Wjm3On1ru", NOW(), NOW()),
 ("Nikta", "efg456", NOW(), NOW()),
 ("Rhystic", "hij789", NOW(), NOW()),
 ("Elumn", "klm012", NOW(), NOW());

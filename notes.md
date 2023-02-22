@@ -41,8 +41,8 @@ Pie in Sky:
 	Add drop shadows to all boxes and buttons
 	Routes - Setup a General 404 error
 
-Defects
-	Login is not checking password????
-	If logged out due to timeout, and on a page that can see logout button, will error
-	Make sure user is logged in to hit logged in pages
-	increase font size of "meta data" on homepage
+Remaining
+	Comment Code
+	Clean out Console Logs
+	Write README and gather screenshots
+	Confirm working on Heroku Site

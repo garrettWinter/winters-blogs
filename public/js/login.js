@@ -2,7 +2,7 @@ console.log("login.js is now connected")
 const loginBtn = document.querySelector('#loginBtn');
 
 const loginHandler = async (event) => {
-  event.preventDefault(); //Since this is no longer a form is this still needed?
+  event.preventDefault();
   console.log("Click captured");
 
   const userNamefield = document.querySelector('#userNamefield').value.trim();

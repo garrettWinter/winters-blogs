@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 
 class Users extends Model {
   checkPassword(userPassword) {
-    // return bcrypt.compareSync(userPassword, this.password);
-    return this.password; // Will use non-encryped passwords
+    return bcrypt.compareSync(userPassword, this.password);
+    // return this.password; // Will use non-encryped passwords
   }
 }
 
@@ -42,7 +42,10 @@ Users.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'Users',
-  }
+    indexes: [
+      { unique: true, fields: ["user_name"] },
+    ]
+  },
 );
 
 module.exports = Users;

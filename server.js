@@ -12,16 +12,16 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {
-      maxAge: 15 * 60 * 1000, //Will time user out after 15 minutes of inactivity
-    },
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize,
-    }),
-  };
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 60 * 60 * 1000, //Will time user out after 60 minutes of inactivity
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
 
 app.use(session(sess));
 
@@ -30,11 +30,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars')
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({force: false}).then(()=> {
-    app.listen(PORT,() => console.log (`Application listening on port ${PORT}. Check out out at http://localhost:3001`))
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Application listening on port ${PORT}. Check out out at http://localhost:3001`))
 });

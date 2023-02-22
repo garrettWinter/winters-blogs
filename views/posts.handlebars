@@ -2,10 +2,16 @@
     {{!-- Pulls in header details about the post --}}
     {{#each postDetails as |post|}}
     <article class="blogPostCard">
-        <div class="postHeader" data-postID="{{post.post_id}}">
+        {{!-- <div class="postHeader">
             <div class="postTitle">{{post.post_title}}</a></div>
             <div class="postMeta">Posted by {{post.User.user_name}} on {{post.updatedAt}}</div>
+        </div> --}}
+
+        <div class="commentHeader" data-postID="{{post.post_id}}">
+            <div class="postTitle">{{post.User.user_name}} Posted "{{post.post_title}}" on
+                {{post.createdAt}}</div>
         </div>
+
         <div class="postBody"> {{post.post_body}}</div>
     </article>
     {{/each}}
@@ -25,10 +31,10 @@
     <textarea id="addCommentTextBox"></textarea>
     <button id="newCommentBtn" data="{{commentDetails.Post.post_id}}">Add a Comment!</button>
 </div>
+<script src="/js/comment.js"></script>
 {{/if}}
 {{#unless loggedIn}}
 <div id="newPostBox">
     <button id="loginBtn"><a href="/login">Login to add a comment</a></button>
 </div>
 {{/unless}}
-<script src="/js/comment.js"></script>

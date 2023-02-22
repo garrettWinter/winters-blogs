@@ -48,5 +48,27 @@ router.post('/update', (req, res) => {
     });
 });
 
+// Route to update an existing post
+router.delete('/delete', (req, res) => {
+  let url = req.headers.referer;
+  let split = url.split('/');
+  const parsedPostID = split.pop();
+  console.log("attempting to delete Post ID: " + parsedPostID);
+  // Deleteing post from the DB
+  Posts.destroy({
+    where: {
+      post_id: parsedPostID,
+    },
+  }
+  )
+    .then((deletedPost) => {
+      res.json(deletedPost);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
 
 module.exports = router;

@@ -8,8 +8,8 @@ const signupHandler = async (event) => {
   const userNamefield = document.querySelector('#userNamefield').value.trim();
   const password = document.querySelector('#passwordfield').value.trim();
 
-  console.log (userNamefield);
-  console.log (password);
+  console.log(userNamefield);
+  console.log(password);
   if (userNamefield && password) {
     const response = await fetch('/api/auth/new', {
       method: 'POST',

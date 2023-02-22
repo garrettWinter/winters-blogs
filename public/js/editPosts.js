@@ -1,6 +1,7 @@
 console.log("editPosts.js is connected");
 
 const updatePostBtn = document.querySelector('#updatePostBtn');
+const deletePostBtn = document.querySelector('#deletePostBtn');
 const updateTitleBox = document.querySelector('#updateTitleBox');
 const updateBodyBox = document.querySelector('#updateBodyBox');
 
@@ -19,4 +20,14 @@ async function updatePost() {
     document.location.replace('/dashboard'); // This needs to redirect back to dashboard page
 }
 
+async function deletePost() {
+    const deletePost = await fetch('/api/posts/delete', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    console.log(deletePost)
+    // document.location.replace('/dashboard'); // This needs to redirect back to dashboard page
+}
+
 updatePostBtn.addEventListener("click", updatePost);
+deletePostBtn.addEventListener("click", deletePost);
