@@ -3,7 +3,7 @@ const deletePostBtn = document.querySelector('#deletePostBtn');
 const updateTitleBox = document.querySelector('#updateTitleBox');
 const updateBodyBox = document.querySelector('#updateBodyBox');
 
-// This listens to see if the user has clicked the button to updated an existing post
+// This listens to see if the user has clicked the button to update an existing post
 async function updatePost() {
     updatePostDetails = {
         post_title: updateTitleBox.value,

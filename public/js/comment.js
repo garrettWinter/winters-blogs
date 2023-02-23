@@ -1,4 +1,4 @@
-// This listens to see if the user has clicked the button to sumit a new comment
+// This listens to see if the user has clicked the button to submit a new comment
 
 const addCommentBtn = document.querySelector('#newCommentBtn');
 const addCommentTextBox = document.querySelector('#addCommentTextBox');

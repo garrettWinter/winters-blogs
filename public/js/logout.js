@@ -1,4 +1,4 @@
-//This will listen for clicks on logout button and will make to call to delete the users session from the database.
+//This will listen for clicks on logout button and will make to call to delete the user’s session from the database.
 
 const logout = async () => {
   const response = await fetch('/api/auth/logout', {

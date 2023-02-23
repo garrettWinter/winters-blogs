@@ -1,6 +1,6 @@
 const loginBtn = document.querySelector('#loginBtn');
 
-//This will listen for button clicks on the login page and will verify that the usename and password match.
+//This will listen for button clicks on the login page and will verify that the username and password match.
 const loginHandler = async (event) => {
   event.preventDefault();
   const userNamefield = document.querySelector('#userNamefield').value.trim();
@@ -22,3 +22,4 @@ const loginHandler = async (event) => {
 };
 
 loginBtn.addEventListener("click", loginHandler);
+

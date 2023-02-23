@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
                 {
                     model: Users,
                     attributes: {
-                        // Making it so the passoword field is not included in the results
+                        // Making it so the password field is not included in the results
                         exclude: ['password']
                     }
                 },
@@ -41,7 +41,7 @@ router.get('/dashboard', async (req, res) => {
                     {
                         model: Users,
                         attributes: {
-                            // Making it so the passoword field is not included in the results
+                            // Making it so the password field is not included in the results
                             exclude: ['password']
                         }
                     },
@@ -72,7 +72,7 @@ router.get('/dashboard/post/:id', async (req, res) => {
                 {
                     model: Users,
                     attributes: {
-                        // Making it so the passoword field is not included in the results
+                        // Making it so the password field is not included in the results
                         exclude: ['password']
                     }
                 },
@@ -102,7 +102,7 @@ router.get('/posts/:id', async (req, res) => {
                 {
                     model: Users,
                     attributes: {
-                        // Making it so the passoword field is not included in the results
+                        // Making it so the password field is not included in the results
                         exclude: ['password']
                     }
                 },
@@ -115,7 +115,7 @@ router.get('/posts/:id', async (req, res) => {
         const commentsData = await Comments.findAll({
             include: [
                 {
-                    model: Users, ////// Need to add a exclude on password
+                    model: Users, ////// Need to add a exclude on password.
                 },
                 {
                     model: Posts,
@@ -143,7 +143,6 @@ router.get('/posts/:id', async (req, res) => {
 );
 
 
-
 //GET Route for the Login in HTML page
 router.get('/dashboard/posts/new', async (req, res) => {
     try {
@@ -154,7 +153,6 @@ router.get('/dashboard/posts/new', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 //GET Route for the Login in HTML page
 router.get('/login', async (req, res) => {
@@ -167,7 +165,7 @@ router.get('/login', async (req, res) => {
     }
 });
 
-//GET Route for the Sign up HTML page
+//GET Route for the Sign-up HTML page
 router.get('/signup', async (req, res) => {
     try {
         res.render('signup', {

@@ -51,7 +51,7 @@ router.delete('/delete', (req, res) => {
   let split = url.split('/');
   const parsedPostID = split.pop();
 
-  // Deleteing post from the DB
+  // Deleting post from the DB
   Posts.destroy({
     where: {
       post_id: parsedPostID,
@@ -66,6 +66,5 @@ router.delete('/delete', (req, res) => {
       res.json(err);
     });
 });
-
 
 module.exports = router;

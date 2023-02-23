@@ -2,20 +2,19 @@ const newPostBtn = document.querySelector('#newPostBtn');
 const newPostTitleBox = document.querySelector('#newPostTitleBox');
 const newPostBodyBox = document.querySelector('#newPostBodyBox');
 
-
-//This will listen for a click on the submit new post button and will save the post, if the user leaves a feild empty it will alert them on this.
+//This will listen for a click on the submit new post button and will save the post, if the user leaves a field empty it will alert them on this.
 async function saveNewPost() {
 
     if (newPostBodyBox.value == '' && newPostTitleBox.value == '') {
-        window.alert("Please enter a value both the Post Title and Post Body feilds and try again")
+        window.alert("Please enter a value both the Post Title and Post Body fields and try again")
         return;
     }
     if (newPostTitleBox.value == '') {
-        window.alert("Please enter a value into the post title feild and try again")
+        window.alert("Please enter a value into the post title field and try again")
         return;
     }
     if (newPostBodyBox.value == '') {
-        window.alert("Please enter a value into the post body feild and try again")
+        window.alert("Please enter a value into the post body field and try again")
         return;
     }
     newPostDetails = {
