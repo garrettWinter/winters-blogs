@@ -1,10 +1,8 @@
-console.log("login.js is now connected")
 const loginBtn = document.querySelector('#loginBtn');
 
+//This will listen for button clicks on the login page and will verify that the usename and password match.
 const loginHandler = async (event) => {
   event.preventDefault();
-  console.log("Click captured");
-
   const userNamefield = document.querySelector('#userNamefield').value.trim();
   const password = document.querySelector('#passwordfield').value.trim();
 

@@ -2,16 +2,10 @@
     {{!-- Pulls in header details about the post --}}
     {{#each postDetails as |post|}}
     <article class="blogPostCard">
-        {{!-- <div class="postHeader">
-            <div class="postTitle">{{post.post_title}}</a></div>
-            <div class="postMeta">Posted by {{post.User.user_name}} on {{post.updatedAt}}</div>
-        </div> --}}
-
         <div class="commentHeader" data-postID="{{post.post_id}}">
             <div class="postTitle">{{post.User.user_name}} Posted "{{post.post_title}}" on
                 {{post.createdAt}}</div>
         </div>
-
         <div class="postBody"> {{post.post_body}}</div>
     </article>
     {{/each}}

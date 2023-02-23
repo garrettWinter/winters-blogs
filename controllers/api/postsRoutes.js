@@ -8,13 +8,11 @@ router.post('/new', (req, res) => {
     post_title: req.body.newPostDetails.post_title,
     post_body: req.body.newPostDetails.post_body
   };
-  console.log(parsedPost);
 
   // Creating a new post in the DB
   Posts.create(parsedPost)
     .then((newPost) => {
       res.status(200).json(newPost);
-      console.log(newPost);
     })
     .catch((err) => {
       res.status(500).json(err);
@@ -52,7 +50,7 @@ router.delete('/delete', (req, res) => {
   let url = req.headers.referer;
   let split = url.split('/');
   const parsedPostID = split.pop();
-  console.log("attempting to delete Post ID: " + parsedPostID);
+
   // Deleteing post from the DB
   Posts.destroy({
     where: {

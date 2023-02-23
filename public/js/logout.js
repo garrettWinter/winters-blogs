@@ -1,5 +1,6 @@
+//This will listen for clicks on logout button and will make to call to delete the users session from the database.
+
 const logout = async () => {
-  console.log("logout clicked"); //REMOVE ME
   const response = await fetch('/api/auth/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -11,5 +12,4 @@ const logout = async () => {
     alert('Failed to log out.');
   }
 };
-console.log("in logout.js");
 document.querySelector('#logout').addEventListener('click', logout);

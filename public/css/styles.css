@@ -146,9 +146,9 @@ a:visited {
 
 .authBtn {
     width: 100%;
-    background-color: rgb(102 102 102);
+    background-color: black;
     color: lightgray;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 20px;
     padding: 3px 0px;
     margin: 3px 2px;
@@ -206,7 +206,7 @@ a:visited {
     width: 20%;
 }
 
-#loginBtn {
+#loginBtn,#signupBtn {
     display: flexbox;
     align-items: center;
     background-color: black;

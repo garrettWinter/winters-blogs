@@ -1,15 +1,13 @@
-console.log("signup.js is now connected")
 const signupBtn = document.querySelector('#signupBtn');
 
+//This will listen for clicks on signup button and will make to call to create a user account in the database.
+
 const signupHandler = async (event) => {
-  event.preventDefault(); //Since this is no longer a form is this still needed?
-  console.log("Click captured");
+  event.preventDefault();
 
   const userNamefield = document.querySelector('#userNamefield').value.trim();
   const password = document.querySelector('#passwordfield').value.trim();
 
-  console.log(userNamefield);
-  console.log(password);
   if (userNamefield && password) {
     const response = await fetch('/api/auth/new', {
       method: 'POST',
@@ -20,7 +18,6 @@ const signupHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      console.log(response);
       alert('Failed to sign up.');
     }
   }

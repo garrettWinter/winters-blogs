@@ -42,7 +42,5 @@ Pie in Sky:
 	Routes - Setup a General 404 error
 
 Remaining
-	Comment Code
-	Clean out Console Logs
 	Write README and gather screenshots
 	Confirm working on Heroku Site

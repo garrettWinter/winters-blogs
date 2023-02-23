@@ -1,9 +1,5 @@
+{{!-- This is the view for the homepage that will show all posts by all users. --}}
 <div id="blogPostSection">
-    {{!-- {{#if loggedIn}}
-    <div id="newPostBox">
-        <button id="newPostBtn">+ New Post</button>
-    </div>
-    {{/if}} --}}
     {{#each blogPosts as |posts|}}
     <article class="blogPostCard">
         <div class="postHeader">

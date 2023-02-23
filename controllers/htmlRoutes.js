@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
         const blogPosts = dbblogPosts.map((Posts) =>
             Posts.get({ plain: true })
         );
-        console.log(blogPosts);
         res.render('homepage', {
             blogPosts,
             loggedIn: req.session.loggedIn,
@@ -33,7 +32,6 @@ router.get('/', async (req, res) => {
 //GET Dashboard Route to render the main dashboard page
 
 router.get('/dashboard', async (req, res) => {
-    console.log(req.session.loggedIn);
     if (!req.session.loggedIn) {
         res.redirect('/login');
     } else {
@@ -55,7 +53,6 @@ router.get('/dashboard', async (req, res) => {
             const blogPosts = dbblogPosts.map((Posts) =>
                 Posts.get({ plain: true })
             );
-            console.log(blogPosts);
             res.render('dashboard', {
                 blogPosts,
                 loggedIn: req.session.loggedIn,
@@ -69,7 +66,6 @@ router.get('/dashboard', async (req, res) => {
 
 //GET Dashboard Route to render a specific post page
 router.get('/dashboard/post/:id', async (req, res) => {
-    console.log(req);
     try {
         const postsData = await Posts.findAll({
             include: [
@@ -86,7 +82,6 @@ router.get('/dashboard/post/:id', async (req, res) => {
         const postDetails = postsData.map((posts) =>
             posts.get({ plain: true })
         );
-        console.log(postDetails);
         res.render('editPost', {
             postDetails,
             loggedIn: req.session.loggedIn,
@@ -101,7 +96,6 @@ router.get('/dashboard/post/:id', async (req, res) => {
 //GET Posts by ID Route to allow users to add comments to existing posts
 
 router.get('/posts/:id', async (req, res) => {
-    // console.log(req);
     try {
         const postsData = await Posts.findAll({
             include: [
