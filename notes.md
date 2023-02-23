@@ -40,7 +40,3 @@ Pie in Sky:
 	If user logged in while on login or signup page, will notify the user of this at the top of the page.
 	Add drop shadows to all boxes and buttons
 	Routes - Setup a General 404 error
-
-Remaining
-	Write README and gather screenshots
-	Confirm working on Heroku Site
