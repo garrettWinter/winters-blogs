@@ -27,7 +27,6 @@ router.post('/update', (req, res) => {
   let split = url.split('/');
   const parsedPostID = split.pop();
 
-  // Updating a existing post in the DB
   Posts.update(
     {
       post_title: req.body.updatePostDetails.post_title,

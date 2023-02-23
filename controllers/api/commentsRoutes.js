@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Comments } = require('../../models');
 
-// CREATE new comment
+// Creating a new comment
 router.post('/new', (req, res) => {
   let url = req.headers.referer;
   let split = url.split('/');
@@ -13,7 +13,6 @@ router.post('/new', (req, res) => {
   };
   console.log(parsedComment);
 
-  // Creating a new comment
   Comments.create(parsedComment)
     .then((newComment) => {
       res.status(200).json(newComment);

@@ -42,6 +42,7 @@ Users.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'Users',
+    // Below is making it so that the user_name field must be unqiue
     indexes: [
       { unique: true, fields: ["user_name"] },
     ]

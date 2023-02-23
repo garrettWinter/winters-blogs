@@ -23,7 +23,7 @@ router.post('/new', async (req, res) => {
   }
 });
 
-// Login
+// User Login
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await Users.findOne({

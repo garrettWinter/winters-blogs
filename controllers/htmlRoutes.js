@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Comments, Posts, Users } = require('../models');
 
-//GET Homepage Route
+//GET Homepage Route to render the homepage
 
 router.get('/', async (req, res) => {
     try {
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-//GET Dashboard Route
+//GET Dashboard Route to render the main dashboard page
 
 router.get('/dashboard', async (req, res) => {
     console.log(req.session.loggedIn);
@@ -67,6 +67,7 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
+//GET Dashboard Route to render a specific post page
 router.get('/dashboard/post/:id', async (req, res) => {
     console.log(req);
     try {
@@ -97,7 +98,7 @@ router.get('/dashboard/post/:id', async (req, res) => {
 }
 );
 
-//GET Posts by ID Route
+//GET Posts by ID Route to allow users to add comments to existing posts
 
 router.get('/posts/:id', async (req, res) => {
     // console.log(req);

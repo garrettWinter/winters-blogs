@@ -1,5 +1,5 @@
 console.log("comment.js is connected");
-
+// This listens to see if the user has clicked the button to sumit a new comment
 
 const addCommentBtn = document.querySelector('#newCommentBtn');
 const addCommentTextBox = document.querySelector('#addCommentTextBox');

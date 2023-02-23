@@ -20,7 +20,7 @@ Users.hasMany(Comments, {
 
 
 // Posts to Comments table assosications to connect a post to a comment
-Comments.belongsTo(Posts, {
+Comments.hasOne(Posts, {
     foreignKey: 'post_id',
 });
 Posts.hasMany(Comments, {
